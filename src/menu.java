@@ -121,44 +121,21 @@ public class menu extends javax.swing.JFrame {
 
     private void bpetunjukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpetunjukActionPerformed
         // TODO add your handling code here:
-    new petunjuk().setVisible(true);
+        new petunjuk().setVisible(true);
         dispose();
     }//GEN-LAST:event_bpetunjukActionPerformed
 
     private void btarikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btarikActionPerformed
         // TODO add your handling code here:
-            str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah penarikan : " ); //pengambilan
-            t = Integer.parseInt(str1);
-            tarik mengambil = new tarik();
-            mengambil.ambil(tab,t);
-            tab =mengambil.getSaldo();
-            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain?","ATM MANDIRI SYARIAH",
-                JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain
-            if (z==0)
-            {
-                this.setVisible(true);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM MANDIRI SYARIAH, ambil kartu ATM Anda.");
-                System.exit(0);
-            }  
+            new penarikan().setVisible(true);
+            dispose();
     }//GEN-LAST:event_btarikActionPerformed
 
     private void bsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsaldoActionPerformed
         // TODO add your handling code here:
-            JOptionPane.showMessageDialog(null,"Saldo Anda saat ini sebesar : " + tab); //informasi saldo
-            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain?","ATM MANDIRI SYARIAH", 
-            JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain 
-            if (z==0) {
-                this.setVisible(true);
-            }
-            
-            else {
-                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM MANDIRI SYARIAH, ambil kartu ATM Anda."); 
-            System.exit(0);
-            }
-            
+
+            new saldo().setVisible(true);
+            dispose();
     }//GEN-LAST:event_bsaldoActionPerformed
 
     private void bkeluar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bkeluar3ActionPerformed
@@ -168,48 +145,14 @@ public class menu extends javax.swing.JFrame {
 
     private void bsetor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsetor1ActionPerformed
         // TODO add your handling code here:
-      
-            str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah penarikan : " ); //pengambilan
-            se = Integer.parseInt(str1);
-            setor jadi = new setor();
-            jadi.menabung(tab,se);
-            tab =jadi.getSaldo();
-            
-            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain ?","ATM MANDIRI SYARIAH",
-                JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain
-            if (z==0)
-            {
-                this.setVisible(true);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM MANDIRI SYARIAH, ambil kartu ATM Anda.");
-                System.exit(0);
-            }
+            new penyetoran().setVisible(true);
+            dispose();
     }//GEN-LAST:event_bsetor1ActionPerformed
 
     private void btransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btransferActionPerformed
         // TODO add your handling code here:
-        
-        
-        str = JOptionPane.showInputDialog(null,"Masukkan rekenening tujuan : " ); //transfer
-        str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah transfer : " ); //transfer
-            t = Integer.parseInt(str1);
-            tarik mengambil = new tarik();
-            mengambil.ambil(tab,t);
-            tab =mengambil.getSaldo();
-            
-            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain ?","ATM MANDIRI SYARIAH",
-                JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain
-            if (z==0)
-            {
-                this.setVisible(true);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM MANDIRI SYARIAH, ambil kartu ATM Anda.");
-                System.exit(0);
-            }
+            new transfer().setVisible(true);
+            dispose();
     }//GEN-LAST:event_btransferActionPerformed
 
     /**
