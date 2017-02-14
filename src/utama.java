@@ -35,7 +35,7 @@ public class utama extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tpin = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         bcancel = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -51,13 +51,13 @@ public class utama extends javax.swing.JFrame {
         jLabel1.setText("MASUKKAN PIN ANDA");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(160, 220, 140, 50);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(150, 270, 150, 40);
+        jPanel1.add(tpin);
+        tpin.setBounds(150, 270, 150, 40);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("SELAMAT DATANG DI BANK MANDIRI SYARIAH");
+        jLabel2.setText("SELAMAT DATANG DI ATM BANK MANDIRI SYARIAH");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(60, 160, 340, 50);
+        jLabel2.setBounds(50, 160, 380, 50);
 
         bcancel.setText("CANCEL");
         bcancel.addActionListener(new java.awt.event.ActionListener() {
@@ -94,15 +94,18 @@ public class utama extends javax.swing.JFrame {
 
     private void bokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bokActionPerformed
         // TODO add your handling code here:
-        if (pin==1234)//cek pin
-        {   
-            menu a = new menu(); 
-            a.setVisible(true);
-            dispose();
-                                        
+        int Pin;
+        int pin=1234;
+
+        Pin = Integer.parseInt(tpin.getText().toString());
+        if (Pin == pin)
+        {
+            this.setVisible(false);
+            new menu().setVisible(true);
         }
-        else {
-            JOptionPane.showMessageDialog(null,"PIN Salah, silahkan ulang kembali!");
+        else if ( Pin != pin)
+        {
+            JOptionPane.showMessageDialog(null, "Masukkan PIN dengan benar!");
         }
     }//GEN-LAST:event_bokActionPerformed
 
@@ -148,6 +151,6 @@ public class utama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField tpin;
     // End of variables declaration//GEN-END:variables
 }
