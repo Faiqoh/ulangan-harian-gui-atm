@@ -13,6 +13,9 @@ import javax.swing.JOptionPane;
  */
 public class menu extends javax.swing.JFrame {
         
+    
+    String str, str1, setor;
+        int s, tab=50000,z,se,t;
     /**
      * Creates new form menu
      */
@@ -123,10 +126,27 @@ public class menu extends javax.swing.JFrame {
 
     private void btarikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btarikActionPerformed
         // TODO add your handling code here:
+        str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah penarikan : " ); //pengambilan
+            t = Integer.parseInt(str1);
+            tarik mengambil = new tarik();
+            mengambil.ambil(tab,t);
+            tab =mengambil.getSaldo();
+            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain?","ATM BAYKRIS",
+                JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain
+            if (z==0)
+            {
+                this.setVisible(true);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM BAYKRIS, ambil kartu ATM Anda.");
+                System.exit(0);
+            }  
     }//GEN-LAST:event_btarikActionPerformed
 
     private void bsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsaldoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_bsaldoActionPerformed
 
     private void bkeluar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bkeluar3ActionPerformed
@@ -136,8 +156,6 @@ public class menu extends javax.swing.JFrame {
 
     private void bsetor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsetor1ActionPerformed
         // TODO add your handling code here:
-        String str, str1, setor;
-        int s, tab=50000,se,z;
       
         str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah Setor : " ); //menabung
             se = Integer.parseInt(str1);
@@ -159,8 +177,7 @@ public class menu extends javax.swing.JFrame {
 
     private void btransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btransferActionPerformed
         // TODO add your handling code here:
-        String str, str1, setor;
-        int s, tab=50000,z;
+        
         
         str = JOptionPane.showInputDialog(null,"Masukkan rekenening tujuan : " ); //transfer
         str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah transfer : " ); //transfer
