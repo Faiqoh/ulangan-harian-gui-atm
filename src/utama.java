@@ -50,9 +50,9 @@ public class utama extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("MASUKKAN PIN ANDA");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(160, 220, 140, 50);
+        jLabel1.setBounds(170, 220, 140, 50);
         jPanel1.add(tpin);
-        tpin.setBounds(150, 270, 150, 40);
+        tpin.setBounds(160, 270, 160, 40);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("SELAMAT DATANG DI ATM BANK MANDIRI SYARIAH");
@@ -66,7 +66,7 @@ public class utama extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bcancel);
-        bcancel.setBounds(140, 330, 80, 40);
+        bcancel.setBounds(150, 330, 80, 40);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/download.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -79,7 +79,7 @@ public class utama extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bok);
-        bok.setBounds(240, 330, 80, 40);
+        bok.setBounds(250, 330, 80, 40);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 490, 400);
