@@ -28,28 +28,30 @@ public class penyetoran extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jpenyetoran = new javax.swing.JTextField();
+        tsetor = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         bcancel = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         bok = new javax.swing.JButton();
+        jsisa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 102));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("MASUKKAN JUMLAH PENYETORAN");
+        jLabel1.setText("JUMLAH PENYETORAN");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(40, 220, 210, 50);
-        jPanel1.add(jpenyetoran);
-        jpenyetoran.setBounds(280, 230, 150, 40);
+        jLabel1.setBounds(40, 210, 140, 50);
+        jPanel1.add(tsetor);
+        tsetor.setBounds(210, 220, 160, 40);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("SELAMAT DATANG DI BANK MANDIRI SYARIAH");
+        jLabel2.setText("MASUKKAN JUMLAH PENYETORAN YANG ANDA INGINKAN");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(60, 160, 340, 50);
+        jLabel2.setBounds(30, 160, 420, 50);
 
         bcancel.setText("CANCEL");
         bcancel.addActionListener(new java.awt.event.ActionListener() {
@@ -58,7 +60,7 @@ public class penyetoran extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bcancel);
-        bcancel.setBounds(140, 330, 80, 40);
+        bcancel.setBounds(110, 330, 80, 40);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/download.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -71,47 +73,36 @@ public class penyetoran extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bok);
-        bok.setBounds(240, 330, 80, 40);
+        bok.setBounds(260, 330, 80, 40);
+        jPanel1.add(jsisa);
+        jsisa.setBounds(140, 280, 170, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 490, 400);
 
-        pack();
+        setBounds(0, 0, 485, 437);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcancelActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        new menu().setVisible(true);
+        dispose();
     }//GEN-LAST:event_bcancelActionPerformed
 
     private void bokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bokActionPerformed
         // TODO add your handling code here:
-        String str, str1;
-        int s, tab=50000;
-        str = (jpenyetoran.getText().toString());
+           
+        int z = saldo.bonus;
+        int b;
         
-        s = Integer.parseInt(str);
-        setor hasil = new setor();
-        hasil.menabung(tab, s);
-        tab = hasil.getSaldo();
+        b = Integer.parseInt(tsetor.getText());
+
+        z = z + b;
+        saldo.bonus = z;
+        
+        
+        new menu().setVisible(true);
+        dispose(); 
     }//GEN-LAST:event_bokActionPerformed
 
     /**
@@ -156,6 +147,7 @@ public class penyetoran extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jpenyetoran;
+    private javax.swing.JLabel jsisa;
+    private javax.swing.JTextField tsetor;
     // End of variables declaration//GEN-END:variables
 }
