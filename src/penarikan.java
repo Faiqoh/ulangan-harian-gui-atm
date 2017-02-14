@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,6 +16,10 @@ public class penarikan extends javax.swing.JFrame {
     /**
      * Creates new form penarikan
      */
+    
+    /*String str, str1, saldo;
+        int s,se,t, tab=250000;
+        int z;*/
     public penarikan() {
         initComponents();
     }
@@ -28,28 +35,30 @@ public class penarikan extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jpenarikan = new javax.swing.JTextField();
+        ttarik = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         bcancel = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         bok = new javax.swing.JButton();
+        jsisa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 102));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("MASUKKAN JUMLAH PENARIKAN");
+        jLabel1.setText("JUMLAH PENARIKAN");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(40, 220, 210, 50);
-        jPanel1.add(jpenarikan);
-        jpenarikan.setBounds(280, 230, 150, 40);
+        jLabel1.setBounds(40, 210, 140, 50);
+        jPanel1.add(ttarik);
+        ttarik.setBounds(210, 220, 160, 40);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("SELAMAT DATANG DI BANK MANDIRI SYARIAH");
+        jLabel2.setText("MASUKKAN JUMLAH PENARIKAN YANG ANDA INGINKAN");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(60, 160, 340, 50);
+        jLabel2.setBounds(30, 160, 410, 50);
 
         bcancel.setText("CANCEL");
         bcancel.addActionListener(new java.awt.event.ActionListener() {
@@ -58,7 +67,7 @@ public class penarikan extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bcancel);
-        bcancel.setBounds(140, 330, 80, 40);
+        bcancel.setBounds(120, 330, 80, 40);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/download.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -71,47 +80,39 @@ public class penarikan extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bok);
-        bok.setBounds(240, 330, 80, 40);
+        bok.setBounds(270, 330, 80, 40);
+        jPanel1.add(jsisa);
+        jsisa.setBounds(140, 280, 170, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 490, 400);
 
-        pack();
+        setBounds(0, 0, 491, 437);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcancelActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        new menu().setVisible(true);
+        dispose();
     }//GEN-LAST:event_bcancelActionPerformed
 
     private void bokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bokActionPerformed
         // TODO add your handling code here:
-         String str, str1;
-        int t, tab=50000;
-        str1 = (jpenarikan.getText().toString());
+        int z = saldo.bonus;
+        int b;
+                
+        b = Integer.parseInt(ttarik.getText());
         
-        t = Integer.parseInt(str1);
-        tarik mengambil = new tarik();
-        mengambil.ambil(tab,t);
-        tab = mengambil.getSaldo();
+        if(z>b){
+            
+            z = z - b;
+            saldo.bonus = z;
+        }else{
+            JOptionPane.showMessageDialog(null, "Saldo anda tidak mencukupi!","INFORMASI",JOptionPane.INFORMATION_MESSAGE);
+        }           
+            
+        new menu().setVisible(true);
+        dispose();    
     }//GEN-LAST:event_bokActionPerformed
 
     /**
@@ -156,6 +157,7 @@ public class penarikan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jpenarikan;
+    private javax.swing.JLabel jsisa;
+    private javax.swing.JTextField ttarik;
     // End of variables declaration//GEN-END:variables
 }
