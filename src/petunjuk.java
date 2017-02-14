@@ -33,6 +33,7 @@ public class petunjuk extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
+        bok1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -49,14 +50,14 @@ public class petunjuk extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(80, 10, 320, 150);
 
-        bok.setText("OK");
+        bok.setText("EXIT");
         bok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bokActionPerformed(evt);
             }
         });
         jPanel1.add(bok);
-        bok.setBounds(390, 350, 80, 40);
+        bok.setBounds(290, 350, 80, 40);
 
         jTextField1.setText("3. Gunakan uang sesuai kebutuhan dan rajinlah menabung");
         jTextField1.setEnabled(false);
@@ -73,6 +74,15 @@ public class petunjuk extends javax.swing.JFrame {
         jPanel1.add(jTextField3);
         jTextField3.setBounds(40, 250, 370, 40);
 
+        bok1.setText("OK");
+        bok1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bok1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bok1);
+        bok1.setBounds(390, 350, 80, 40);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 480, 400);
 
@@ -80,8 +90,13 @@ public class petunjuk extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bokActionPerformed
-        System.exit(0);
+        new menu().setVisible(true);
+        dispose();
     }//GEN-LAST:event_bokActionPerformed
+
+    private void bok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bok1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bok1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,6 +135,7 @@ public class petunjuk extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bok;
+    private javax.swing.JButton bok1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
