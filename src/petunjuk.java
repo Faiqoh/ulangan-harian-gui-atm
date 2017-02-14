@@ -58,7 +58,7 @@ public class petunjuk extends javax.swing.JFrame {
         jPanel1.add(bok);
         bok.setBounds(390, 350, 80, 40);
 
-        jTextField1.setText("3. Gunakan Uang sesuai kebutuhan dan rajinlah menabung");
+        jTextField1.setText("3. Gunakan uang sesuai kebutuhan dan rajinlah menabung");
         jTextField1.setEnabled(false);
         jPanel1.add(jTextField1);
         jTextField1.setBounds(40, 290, 370, 40);
