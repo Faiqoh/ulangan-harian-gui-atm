@@ -31,6 +31,8 @@ public class petunjuk extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         bok = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -54,11 +56,22 @@ public class petunjuk extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bok);
-        bok.setBounds(240, 330, 80, 40);
+        bok.setBounds(390, 350, 80, 40);
 
-        jTextField1.setText("1. Masukkan PIN Anda dengan Benar ");
+        jTextField1.setText("3. Gunakan Uang sesuai kebutuhan dan rajinlah menabung");
+        jTextField1.setEnabled(false);
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(40, 210, 370, 40);
+        jTextField1.setBounds(40, 290, 370, 40);
+
+        jTextField2.setText("1. Masukkan PIN Anda dengan Benar ");
+        jTextField2.setEnabled(false);
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(40, 210, 370, 40);
+
+        jTextField3.setText("2. Bertransaksilah sesuai kebutuhan Anda");
+        jTextField3.setEnabled(false);
+        jPanel1.add(jTextField3);
+        jTextField3.setBounds(40, 250, 370, 40);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 480, 400);
@@ -111,5 +124,7 @@ public class petunjuk extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
