@@ -14,8 +14,9 @@ import javax.swing.JOptionPane;
 public class menu extends javax.swing.JFrame {
         
     
-    String str, str1, setor;
-        int s, tab=50000,z,se,t;
+        String str, str1, saldo;
+        int s,se,t, tab=250000;
+        int z; 
     /**
      * Creates new form menu
      */
@@ -50,9 +51,9 @@ public class menu extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("SELAMAT DATANG DI BANK MANDIRI SYARIAH");
+        jLabel2.setText("LAKUKAN TRANSAKSI SESUAI YANG ANDA BUTUHKAN");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(70, 140, 340, 50);
+        jLabel2.setBounds(50, 140, 400, 50);
 
         bpetunjuk.setText("PETUNJUK");
         bpetunjuk.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +93,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(bkeluar3);
-        bkeluar3.setBounds(280, 340, 100, 40);
+        bkeluar3.setBounds(270, 340, 140, 40);
 
         bsetor1.setText("PENYETORAN");
         bsetor1.addActionListener(new java.awt.event.ActionListener() {
@@ -126,12 +127,12 @@ public class menu extends javax.swing.JFrame {
 
     private void btarikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btarikActionPerformed
         // TODO add your handling code here:
-        str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah penarikan : " ); //pengambilan
+            str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah penarikan : " ); //pengambilan
             t = Integer.parseInt(str1);
             tarik mengambil = new tarik();
             mengambil.ambil(tab,t);
             tab =mengambil.getSaldo();
-            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain?","ATM BAYKRIS",
+            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain?","ATM MANDIRI SYARIAH",
                 JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain
             if (z==0)
             {
@@ -139,14 +140,25 @@ public class menu extends javax.swing.JFrame {
             }
             else
             {
-                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM BAYKRIS, ambil kartu ATM Anda.");
+                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM MANDIRI SYARIAH, ambil kartu ATM Anda.");
                 System.exit(0);
             }  
     }//GEN-LAST:event_btarikActionPerformed
 
     private void bsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsaldoActionPerformed
         // TODO add your handling code here:
-        
+            JOptionPane.showMessageDialog(null,"Saldo Anda saat ini sebesar : " + tab); //informasi saldo
+            z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain?","ATM MANDIRI SYARIAH", 
+            JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain 
+            if (z==0) {
+                this.setVisible(true);
+            }
+            
+            else {
+                JOptionPane.showMessageDialog(null,"Terimakasih telah menggunakan ATM MANDIRI SYARIAH, ambil kartu ATM Anda."); 
+            System.exit(0);
+            }
+            
     }//GEN-LAST:event_bsaldoActionPerformed
 
     private void bkeluar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bkeluar3ActionPerformed
@@ -157,9 +169,10 @@ public class menu extends javax.swing.JFrame {
     private void bsetor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsetor1ActionPerformed
         // TODO add your handling code here:
       
-        str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah Setor : " ); //menabung
+            str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah penarikan : " ); //pengambilan
             se = Integer.parseInt(str1);
             setor jadi = new setor();
+            jadi.menabung(tab,se);
             tab =jadi.getSaldo();
             
             z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain ?","ATM MANDIRI SYARIAH",
@@ -181,10 +194,10 @@ public class menu extends javax.swing.JFrame {
         
         str = JOptionPane.showInputDialog(null,"Masukkan rekenening tujuan : " ); //transfer
         str1 = JOptionPane.showInputDialog(null,"Masukkan jumlah transfer : " ); //transfer
-            s = Integer.parseInt(str1);
-            setor hasil = new setor();
-            hasil.menabung(tab, s);
-            tab =hasil.getSaldo();
+            t = Integer.parseInt(str1);
+            tarik mengambil = new tarik();
+            mengambil.ambil(tab,t);
+            tab =mengambil.getSaldo();
             
             z=JOptionPane.showConfirmDialog(null,"Melanjutkan transaksi lain ?","ATM MANDIRI SYARIAH",
                 JOptionPane.YES_NO_OPTION, 3); //konfirmasi transaksi lain
